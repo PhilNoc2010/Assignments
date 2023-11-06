@@ -10,6 +10,8 @@ npx create-react-app your-project-here
 
 React components should be PascalCase, with .jsx extension
 
+npm install react-router-dom axios
+
 rafce = React Arrow Function Components with Exports
 
 ### forms
