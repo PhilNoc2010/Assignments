@@ -15,9 +15,5 @@ app.use( express.urlencoded({ extended: true }) );
 const AllMyProductRoutes = require("./routes/author.routes")
 AllMyProductRoutes(app)
 
-app.get("/api/test", (req, res) => {
-    return res.json({messge:"hello"})
-})
-
 // this needs to be below the other code blocks
 app.listen( port, () => console.log(`Listening on port: ${port}`) );

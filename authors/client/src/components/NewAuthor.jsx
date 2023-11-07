@@ -31,11 +31,6 @@ const NewAuthor = () => {
             })
     }
 
-    const cancelHandler = (e) => {
-        e.preventDefault()
-        setAuthorName("")
-    }
-
   return (
     <div>
         <p><Link to="/">Home</Link></p>
@@ -46,7 +41,7 @@ const NewAuthor = () => {
             <label htmlFor="authorName">Name: </label>
             <input type="text" id="authorName" value={authorName} onChange={(e) => setAuthorName(e.target.value)}/>
             <p>
-                <button onClick={(e) => cancelHandler(e)}>Cancel</button>
+                <button onClick={() => setAuthorName("")}>Cancel</button>
                 <button onClick={(e) => submitHandler(e)}>Submit</button>
             </p>
         </form>

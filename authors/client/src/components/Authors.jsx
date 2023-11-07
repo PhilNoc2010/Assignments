@@ -19,14 +19,13 @@ const Authors = () => {
       })
   },[])
 
-  const updateHandler = (e, id) => {
-    e.preventDefault()
+  const updateHandler = ( id) => {
+
     console.log("handling an update for " + id)
     navigate("/authors/"+ id + "/edit")
   }
 
-  const deleteHandler = (e, id) => {
-    e.preventDefault()
+  const deleteHandler = (id) => {
     axios.delete("http://localhost:8000/api/authors/"+id )
       .then(res => {
         setAuthors(authors.filter(authors => id !== authors._id))
@@ -52,7 +51,7 @@ const Authors = () => {
           {authors.map((author) => {
             return <tr key={author._id}>
                     <td>{author.authorName}</td>
-                    <td> <button onClick={(e) => {updateHandler(e, author._id)}}>Update</button> / <button onClick={(e) => {deleteHandler(e, author._id)}}>Delete</button></td>
+                    <td> <button onClick={() => {updateHandler(author._id)}}>Update</button> / <button onClick={() => {deleteHandler(author._id)}}>Delete</button></td>
                   </tr>
           })
           }
